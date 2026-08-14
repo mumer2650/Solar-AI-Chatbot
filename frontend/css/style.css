@@ -636,6 +636,61 @@ body::after {
   box-shadow: 0 12px 24px rgba(232, 135, 30, 0.2);
 }
 
+/* ============================================================ */
+/* Markdown Table Styles in Chat                                */
+/* ============================================================ */
+.chat-bubble table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 0.9em;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chat-bubble th,
+.chat-bubble td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chat-bubble th {
+  background-color: rgba(255, 255, 255, 0.08);
+  font-weight: 600;
+  color: var(--horizon-300);
+  letter-spacing: 0.5px;
+}
+
+.chat-bubble tr:last-child td {
+  border-bottom: none;
+}
+
+.chat-bubble tr:nth-of-type(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.chat-bubble--user table {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--dusk-950);
+}
+
+.chat-bubble--user th {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--dusk-950);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.chat-bubble--user td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.chat-bubble--user tr:nth-of-type(even) {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
 .suggestion-row {
   display: flex;
   flex-wrap: wrap;

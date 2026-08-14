@@ -36,6 +36,13 @@ chatForm.addEventListener("submit", (e) => {
   sendMessage(text);
 });
 
+chatInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault();
+    chatForm.dispatchEvent(new Event("submit"));
+  }
+});
+
 // ---- STEP 9: Suggestion chips also trigger a send ----
 suggestionChips.forEach((chip) => {
   chip.addEventListener("click", () => {
@@ -72,11 +79,7 @@ async function sendMessage(text) {
 
     showTyping(false);
     appendBotBubble(botReply);
-    
-    if (data.tool_result) {
-      appendToolResultCard(data.tool_result);
-    }
-    
+
     scrollToBottom();
   } catch (err) {
     console.error("Chat request failed:", err);
@@ -114,48 +117,16 @@ function appendBotBubble(text) {
       <div class="chat-bubble chat-bubble--bot markdown-content"></div>
     </div>
   `;
-  
+
   // Parse markdown and sanitize
   const parsedHTML = marked.parse(text);
   const cleanHTML = DOMPurify.sanitize(parsedHTML);
   row.querySelector(".chat-bubble--bot").innerHTML = cleanHTML;
-  
+
   chatThread.insertBefore(row, typingRow);
 }
 
-function appendToolResultCard(result) {
-  const row = document.createElement("div");
-  row.className = "chat-row chat-row--bot";
-  row.dataset.role = "bot";
-  
-  const systemSize = result.recommended_system_kw || "N/A";
-  const panels = result.recommended_panels_count || "N/A";
-  const roofArea = result.required_roof_area_sqft || "N/A";
-  const battery = result.battery_capacity_kwh ? result.battery_capacity_kwh + " kWh" : "N/A";
-  
-  row.innerHTML = `
-    <div class="chat-avatar chat-avatar--bot" aria-hidden="true" style="opacity: 0;"></div>
-    <div class="chat-group">
-      <div class="answer-card">
-        <div class="answer-tabs">
-          <span class="answer-tab answer-tab--active">Recommendation</span>
-        </div>
-        <div class="answer-body">
-          <div class="answer-head">
-            <span class="answer-label">Initial estimate</span>
-          </div>
-          <dl class="answer-grid">
-            <div class="answer-item"><dt>System size</dt><dd>${systemSize} kW</dd></div>
-            <div class="answer-item"><dt>Panels needed</dt><dd>${panels}</dd></div>
-            <div class="answer-item"><dt>Est. roof area</dt><dd>${roofArea} sq ft</dd></div>
-            <div class="answer-item"><dt>Battery backup</dt><dd>${battery}</dd></div>
-          </dl>
-        </div>
-      </div>
-    </div>
-  `;
-  chatThread.insertBefore(row, typingRow);
-}
+
 
 // ---- STEP 5: Typing indicator ----
 function showTyping(visible) {
@@ -221,15 +192,15 @@ if (openCalcBtn && closeCalcBtn && calcModal && calcForm) {
 
   calcForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    
+
     const monthlyUnits = document.getElementById("monthly-units").value;
     const backupHours = document.getElementById("backup-hours").value || 0;
-    
+
     const submitBtn = calcForm.querySelector(".modal-submit-btn");
     const originalBtnText = submitBtn.innerHTML;
     submitBtn.innerHTML = "<span>Calculating...</span>";
     submitBtn.disabled = true;
-    
+
     // Show typing dots while "calculating"
     calcResult.innerHTML = `
       <div style="display: flex; justify-content: center; padding: 20px;">
@@ -239,31 +210,31 @@ if (openCalcBtn && closeCalcBtn && calcModal && calcForm) {
       </div>
     `;
     calcResult.style.display = "block";
-    
+
     try {
       // Add a small artificial delay for UX (makes the calculation feel robust)
       await new Promise(r => setTimeout(r, 600));
       const response = await fetch(RECOMMEND_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          monthly_units: parseFloat(monthlyUnits), 
-          backup_hours: parseFloat(backupHours) 
+        body: JSON.stringify({
+          monthly_units: parseFloat(monthlyUnits),
+          backup_hours: parseFloat(backupHours)
         }),
       });
 
       if (!response.ok) throw new Error(`Server responded ${response.status}`);
-      
+
       const data = await response.json();
-      
+
       if (data.success && data.data) {
         const result = data.data;
-        
+
         const systemSize = result.recommended_system_kw || "N/A";
         const panels = result.recommended_panels_count || "N/A";
         const roofArea = result.required_roof_area_sqft || "N/A";
         const battery = result.battery_capacity_kwh ? result.battery_capacity_kwh + " kWh" : "None";
-        
+
         calcResult.innerHTML = `
           <div class="answer-head" style="margin-bottom: 16px;">
             <span class="answer-label">Calculated Estimate</span>
@@ -279,7 +250,7 @@ if (openCalcBtn && closeCalcBtn && calcModal && calcForm) {
       } else {
         throw new Error("Invalid response format");
       }
-      
+
     } catch (err) {
       console.error("Calculator request failed:", err);
       calcResult.innerHTML = `<p style="color: var(--red-400); font-size: 0.9rem;">Failed to calculate recommendation. Please check your inputs.</p>`;
@@ -291,26 +262,33 @@ if (openCalcBtn && closeCalcBtn && calcModal && calcForm) {
   });
 }
 
-// ---- Knowledge Base Tab Logic ----
+// ---- Navigation Tab Logic ----
 const navChat = document.getElementById("nav-chat");
 const navKb = document.getElementById("nav-kb");
+const navTest = document.getElementById("nav-test");
+
 const chatArea = document.querySelector(".chat-area");
 const kbArea = document.querySelector(".kb-area");
+const testArea = document.querySelector(".test-area");
 
-if (navChat && navKb && chatArea && kbArea) {
-  navChat.addEventListener("click", (e) => {
-    e.preventDefault();
-    navChat.classList.add("nav-link--active");
-    navKb.classList.remove("nav-link--active");
-    chatArea.style.display = "flex";
-    kbArea.style.display = "none";
-  });
+function switchTab(activeNav, activeArea) {
+  // Reset all navs
+  if (navChat) navChat.classList.remove("nav-link--active");
+  if (navKb) navKb.classList.remove("nav-link--active");
+  if (navTest) navTest.classList.remove("nav-link--active");
 
-  navKb.addEventListener("click", (e) => {
-    e.preventDefault();
-    navKb.classList.add("nav-link--active");
-    navChat.classList.remove("nav-link--active");
-    chatArea.style.display = "none";
-    kbArea.style.display = "flex";
-  });
+  // Set active nav
+  if (activeNav) activeNav.classList.add("nav-link--active");
+
+  // Reset all areas
+  if (chatArea) chatArea.style.display = "none";
+  if (kbArea) kbArea.style.display = "none";
+  if (testArea) testArea.style.display = "none";
+
+  // Set active area
+  if (activeArea) activeArea.style.display = "flex";
 }
+
+if (navChat) navChat.addEventListener("click", (e) => { e.preventDefault(); switchTab(navChat, chatArea); });
+if (navKb) navKb.addEventListener("click", (e) => { e.preventDefault(); switchTab(navKb, kbArea); });
+if (navTest) navTest.addEventListener("click", (e) => { e.preventDefault(); switchTab(navTest, testArea); });

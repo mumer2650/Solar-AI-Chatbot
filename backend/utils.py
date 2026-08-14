@@ -53,18 +53,15 @@ def load_system_prompt(prompt_path: Path | str | None = None) -> str:
     try:
         return base_path.read_text(encoding="utf-8").strip()
     except OSError:
-        return "You are SolarWise AI. Provide accurate solar guidance based on the knowledge base."
+        return "You are Solari. Provide accurate solar guidance based on the knowledge base."
 
 
 # ============================================================
 # 2. Recommendation Engine
 # ============================================================
-def calculate_solar_recommendation(
-    monthly_units: float,
-    backup_hours: float = 0.0,
-) -> dict[str, Any]:
+def calculate_solar_recommendation(monthly_units: float, backup_hours: float = 0.0) -> dict[str, Any]:
     """
-    Calculate a preliminary SolarWise system recommendation based on official constants.
+    Calculate a preliminary Solari system recommendation based on official constants.
     """
     try:
         monthly_units = float(monthly_units)
@@ -138,4 +135,4 @@ TOOL_SCHEMA = {
     ]
 }
 
-
+

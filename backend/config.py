@@ -10,7 +10,7 @@ load_dotenv(BASE_DIR / ".env")
 
 
 class Settings:
-    APP_NAME = "SolarWise AI"
+    APP_NAME = "Solari"
     APP_VERSION = "0.1.0"
     BACKEND_DIR = BASE_DIR
     DATA_DIR = BASE_DIR / "data"

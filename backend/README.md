@@ -1,6 +1,6 @@
-# SolarWise AI - Backend
+# Solari - Backend
 
-This is the FastAPI backend for **SolarWise AI**, an expert Solar Industry Engineering Assistant specializing in residential, commercial, and industrial solar PV solutions in Pakistan under the 2026 NEPRA Net-Billing Regulatory Framework.
+This is the FastAPI backend for **Solari**, an expert Solar Industry Engineering Assistant specializing in residential, commercial, and industrial solar PV solutions in Pakistan under the 2026 NEPRA Net-Billing Regulatory Framework.
 
 ## 🚀 Features
 - **Deterministic Sizing Engine:** Accurately calculates solar PV capacity, panel counts, and battery requirements based on user inputs.

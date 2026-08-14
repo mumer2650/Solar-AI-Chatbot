@@ -23,7 +23,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title=settings.APP_NAME,
     version=settings.APP_VERSION,
-    description="SolarWise AI backend for solar consultation and sizing in Pakistan.",
+    description="Solari backend for solar consultation and sizing in Pakistan.",
     lifespan=lifespan,
 )
 

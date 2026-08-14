@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solari</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="icon" href="assets/favicon.ico" />
   <link rel="icon" type="image/svg+xml" href="assets/Favicon.svg" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="manifest" href="assets/site.webmanifest" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
   <div class="layout">
@@ -26,25 +30,40 @@
       </div>
 
       <label class="search-box">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6" /><line x1="16.3" y1="16.3" x2="21" y2="21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6" />
+          <line x1="16.3" y1="16.3" x2="21" y2="21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
         <input type="text" placeholder="Search" aria-label="Search" />
       </label>
 
       <nav class="nav-list" aria-label="Primary">
         <a href="#" id="nav-chat" class="nav-link nav-link--active">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H8l-4 4V5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /></svg>
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 5h16v11H8l-4 4V5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+          </svg>
           Chat
         </a>
         <a href="#" id="nav-kb" class="nav-link">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M5 4h14v16H5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /><line x1="8" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /><line x1="8" y1="13" x2="16" y2="13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M5 4h14v16H5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+            <line x1="8" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            <line x1="8" y1="13" x2="16" y2="13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+          </svg>
           Knowledge base
         </a>
-        <a href="#" class="nav-link">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M9 5l-1.5 3H4l3 6-3 6h3.5L9 17l1.5 3H14l-3-6 3-6h-3.5L9 5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" /></svg>
+        <a href="#" id="nav-test" class="nav-link">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M9 5l-1.5 3H4l3 6-3 6h3.5L9 17l1.5 3H14l-3-6 3-6h-3.5L9 5Z" stroke="currentColor"
+              stroke-width="1.4" stroke-linejoin="round" />
+          </svg>
           Test cases
         </a>
         <a href="#" class="nav-link">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6" /><path d="M5 20c1-4 4-6 7-6s6 2 7 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6" />
+            <path d="M5 20c1-4 4-6 7-6s6 2 7 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+          </svg>
           Leads
         </a>
       </nav>
@@ -52,11 +71,21 @@
       <p class="section-label">Settings &amp; help</p>
       <nav class="nav-list" aria-label="Secondary">
         <a href="#" class="nav-link">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6" /><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.5-2-3.4-2.3.9a7 7 0 0 0-2-1.2L14.2 3H9.8l-.4 2.6a7 7 0 0 0-2 1.2l-2.3-.9-2 3.4 2 1.5A7 7 0 0 0 5 12c0 .4 0 .8.1 1.2l-2 1.5 2 3.4 2.3-.9c.6.5 1.3.9 2 1.2l.4 2.6h4.4l.4-2.6c.7-.3 1.4-.7 2-1.2l2.3.9 2-3.4-2-1.5c.1-.4.1-.8.1-1.2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" /></svg>
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6" />
+            <path
+              d="M19 12a7 7 0 0 0-.1-1.2l2-1.5-2-3.4-2.3.9a7 7 0 0 0-2-1.2L14.2 3H9.8l-.4 2.6a7 7 0 0 0-2 1.2l-2.3-.9-2 3.4 2 1.5A7 7 0 0 0 5 12c0 .4 0 .8.1 1.2l-2 1.5 2 3.4 2.3-.9c.6.5 1.3.9 2 1.2l.4 2.6h4.4l.4-2.6c.7-.3 1.4-.7 2-1.2l2.3.9 2-3.4-2-1.5c.1-.4.1-.8.1-1.2Z"
+              stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" />
+          </svg>
           Settings
         </a>
         <a href="#" class="nav-link">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" /><path d="M9.5 9.2a2.5 2.5 0 1 1 3.4 2.3c-.9.4-1.4 1-1.4 1.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /><circle cx="12" cy="16.5" r="0.9" fill="currentColor" /></svg>
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" />
+            <path d="M9.5 9.2a2.5 2.5 0 1 1 3.4 2.3c-.9.4-1.4 1-1.4 1.9" stroke="currentColor" stroke-width="1.6"
+              stroke-linecap="round" />
+            <circle cx="12" cy="16.5" r="0.9" fill="currentColor" />
+          </svg>
           FAQ
         </a>
       </nav>
@@ -73,7 +102,10 @@
           <span class="profile-name">User</span>
           <span class="profile-role">Administrator</span>
         </span>
-        <svg class="profile-caret" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l7 6-7 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        <svg class="profile-caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M9 6l7 6-7 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
       </div>
     </aside>
 
@@ -83,17 +115,37 @@
       <header class="chat-header">
         <div class="chat-header-title">
           <h1>Solari</h1>
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
         </div>
         <div class="chat-header-actions">
           <button type="button" class="action-button" aria-label="Notifications">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M6 10a6 6 0 1 1 12 0c0 4 1.5 5.5 1.5 5.5H4.5S6 14 6 10Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" /><path d="M10 19a2 2 0 0 0 4 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M6 10a6 6 0 1 1 12 0c0 4 1.5 5.5 1.5 5.5H4.5S6 14 6 10Z" stroke="currentColor" stroke-width="1.5"
+                stroke-linejoin="round" />
+              <path d="M10 19a2 2 0 0 0 4 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
           </button>
           <button type="button" class="action-button" aria-label="Help">
-            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" /><path d="M9.5 9.2a2.5 2.5 0 1 1 3.4 2.3c-.9.4-1.4 1-1.4 1.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /><circle cx="12" cy="16.5" r="0.9" fill="currentColor" /></svg>
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" />
+              <path d="M9.5 9.2a2.5 2.5 0 1 1 3.4 2.3c-.9.4-1.4 1-1.4 1.9" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" />
+              <circle cx="12" cy="16.5" r="0.9" fill="currentColor" />
+            </svg>
           </button>
           <button type="button" id="theme-toggle" class="action-button action-button--accent" aria-label="Toggle theme">
-            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.3" fill="currentColor" /><g stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="12" y1="2.5" x2="12" y2="4.6" /><line x1="12" y1="19.4" x2="12" y2="21.5" /><line x1="2.5" y1="12" x2="4.6" y2="12" /><line x1="19.4" y1="12" x2="21.5" y2="12" /></g></svg>
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="4.3" fill="currentColor" />
+              <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                <line x1="12" y1="2.5" x2="12" y2="4.6" />
+                <line x1="12" y1="19.4" x2="12" y2="21.5" />
+                <line x1="2.5" y1="12" x2="4.6" y2="12" />
+                <line x1="19.4" y1="12" x2="21.5" y2="12" />
+              </g>
+            </svg>
           </button>
         </div>
       </header>
@@ -101,11 +153,12 @@
       <!-- Thread -->
       <section id="chat-thread" class="chat-list" aria-live="polite" aria-label="Conversation">
 
-        <div class="date-pill"><span>Today · 9:0X AM</span></div>
 
         <div class="chat-row chat-row--bot" data-role="bot">
           <div class="chat-avatar chat-avatar--bot" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" fill="currentColor" /></svg>
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="4.5" fill="currentColor" />
+            </svg>
           </div>
           <div class="chat-group">
             <div class="chat-bubble chat-bubble--bot">
@@ -124,7 +177,9 @@
 
 
         <div class="chat-row chat-row--bot chat-row--typing" data-role="bot" hidden>
-          <div class="chat-avatar chat-avatar--bot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" fill="currentColor" /></svg></div>
+          <div class="chat-avatar chat-avatar--bot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="4.5" fill="currentColor" />
+            </svg></div>
           <div class="chat-group">
             <div class="chat-bubble chat-bubble--bot chat-bubble--typing">
               <span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>
@@ -133,7 +188,11 @@
         </div>
 
         <div class="alert-banner" role="alert" hidden>
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" /><line x1="12" y1="8" x2="12" y2="13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /><circle cx="12" cy="16.2" r="0.9" fill="currentColor" /></svg>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" />
+            <line x1="12" y1="8" x2="12" y2="13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+            <circle cx="12" cy="16.2" r="0.9" fill="currentColor" />
+          </svg>
           <span>Network error. Please try again.</span>
         </div>
 
@@ -143,17 +202,28 @@
       <!-- Input bar -->
       <form id="chat-form" class="composer">
         <button type="button" class="action-button" aria-label="Attach file">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M8 12.5l6-6a3 3 0 0 1 4.2 4.2l-7.4 7.4a5 5 0 0 1-7-7l7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M8 12.5l6-6a3 3 0 0 1 4.2 4.2l-7.4 7.4a5 5 0 0 1-7-7l7-7" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
         </button>
         <button type="button" class="action-button" aria-label="Voice input">
-          <svg viewBox="0 0 24 24" fill="none"><rect x="9" y="3" width="6" height="11" rx="3" stroke="currentColor" stroke-width="1.5" /><path d="M5 11a7 7 0 0 0 14 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /><line x1="12" y1="18" x2="12" y2="21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="9" y="3" width="6" height="11" rx="3" stroke="currentColor" stroke-width="1.5" />
+            <path d="M5 11a7 7 0 0 0 14 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="12" y1="18" x2="12" y2="21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
         </button>
         <div class="composer-field">
-          <textarea id="chat-input" class="composer-input" rows="1" placeholder="Ask about panels, sizing, pricing..." aria-label="Type a message" maxlength="500"></textarea>
+          <textarea id="chat-input" class="composer-input" rows="1" placeholder="Ask about panels, sizing, pricing..."
+            aria-label="Type a message" maxlength="500"></textarea>
           <span id="char-count" class="composer-count">0/500</span>
         </div>
         <button id="send-btn" type="submit" class="send-button" aria-label="Send message">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M4 12L20 4L14 20L11.5 13.5L4 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" /></svg>
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 12L20 4L14 20L11.5 13.5L4 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"
+              stroke-linecap="round" />
+          </svg>
         </button>
       </form>
     </main>
@@ -163,12 +233,17 @@
       <header class="chat-header">
         <div class="chat-header-title">
           <h1>Knowledge Base</h1>
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h14v16H5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /><line x1="8" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /><line x1="8" y1="13" x2="16" y2="13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 4h14v16H5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            <line x1="8" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            <line x1="8" y1="13" x2="16" y2="13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
         </div>
       </header>
-      
+
       <div class="kb-list">
-        <a href="../backend/knowladge_base/Pakistan%20Solar%20Operations%20Research.pdf" target="_blank" class="doc-card">
+        <a href="../backend/knowladge_base/Pakistan%20Solar%20Operations%20Research.pdf" target="_blank"
+          class="doc-card">
           <div class="doc-icon">PDF</div>
           <div class="doc-info">
             <div class="doc-title">Pakistan Solar Operations Research.pdf</div>
@@ -191,6 +266,30 @@
         </a>
       </div>
     </main>
+
+    <!-- Test Cases Area -->
+    <main class="test-area" style="display: none;" role="main" aria-label="Test cases">
+      <header class="chat-header">
+        <div class="chat-header-title">
+          <h1>Test Cases</h1>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 5l-1.5 3H4l3 6-3 6h3.5L9 17l1.5 3H14l-3-6 3-6h-3.5L9 5Z" stroke="currentColor"
+              stroke-width="1.6" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </header>
+
+      <div class="kb-list">
+        <a href="../backend/test_cases/SolarWise_AI_Final_LLM_Knowledge_Base_Testing.xlsx" target="_blank"
+          class="doc-card">
+          <div class="doc-icon">XLSX</div>
+          <div class="doc-info">
+            <div class="doc-title">SolarWise_AI_Final_LLM_Knowledge_Base_Testing.xlsx</div>
+            <div class="doc-meta">20 KB &bull; Added recently</div>
+          </div>
+        </a>
+      </div>
+    </main>
   </div>
 
   <!-- Calculator Modal -->
@@ -199,7 +298,10 @@
       <div class="modal-header">
         <h2>Solar System Calculator</h2>
         <button type="button" id="close-calc-btn" class="modal-close" aria-label="Close calculator">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
         </button>
       </div>
       <div class="modal-body">
@@ -214,7 +316,10 @@
           </div>
           <button type="submit" class="modal-submit-btn">
             <span>Calculate Size</span>
-            <svg viewBox="0 0 24 24" fill="none" class="modal-btn-icon"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" class="modal-btn-icon">
+              <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
           </button>
         </form>
         <div id="calc-result" class="modal-result" style="display: none;">
@@ -228,4 +333,5 @@
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
   <script src="js/script.js"></script>
 </body>
+
 </html>
