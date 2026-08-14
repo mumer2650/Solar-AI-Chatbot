@@ -1,0 +1,20 @@
+# Python / Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Environment Variables & Keys (CRITICAL)
+.env
+*.pem
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.swp
+
+# OS junk
+.DS_Store
+Thumbs.db
