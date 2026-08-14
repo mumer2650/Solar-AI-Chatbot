@@ -6,6 +6,7 @@ from typing import Any
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from config import settings
@@ -33,6 +34,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.mount("/knowledge_base", StaticFiles(directory="knowladge_base"), name="knowledge_base")
 
 
 class RecommendationRequest(BaseModel):

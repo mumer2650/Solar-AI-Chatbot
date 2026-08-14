@@ -29,9 +29,9 @@ def load_knowledge_base(data_dir: Path | str | None = None) -> str:
     
     # We expect these 3 specific files based on the project structure
     expected_files = [
-        "1_hardware_research.md",
-        "2_operations_support.md",
-        "3_systems_research.md"
+        "hardware_research.md",
+        "operations_support.md",
+        "systems_research.md"
     ]
     
     knowledge_parts: list[str] = []
